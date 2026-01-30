@@ -1,6 +1,13 @@
 # Cloudflare worker.js file as free-tier custom back end server for your Ellucian Cards
 This project uses the SDK from Ellucian to build a card that will allow you to make HTTP Requests to your APIs / data models / resources from your authoritative source using Ethos. Cloudflare is used to safely store the API Key of your application. Cloudflare offers a free-tier serverless api service called 'workers'. A worker is a .js file stored in the cloud that will behave as your back end. In this file, the API Key is used as an environment variable, so its never visible. Find step-by-step instructions with screenshots on how to configure Cloudflare and your worker below:
 
+First, go to Cloudflare:
+https://www.cloudflare.com/
+
+Click on 'Start for free' button
+<img width="568" height="429" alt="image" src="https://github.com/user-attachments/assets/f8aa3123-bff3-4a8e-81bc-6dca2672968b" />
+
+
 
 # Create Experience Extension
 This module bootstraps your Ellucian Experience Extension development by creating an extension project. This module is primarily used to create your initial project. From this, you would add cards and make modifications. This project should be placed under your source control.
