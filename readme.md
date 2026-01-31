@@ -56,7 +56,7 @@ We would have this:
 
 `https://wispy-flower-798c.samuel-yarhi.workers.dev/ethos/${resource}`,
 
-And that's it! You're done configuring this project. To run the card, follow the same process as any other Experience Extension using the SDK. Use npm start and use live reload to test your card, or deploy it to your Experience Setup page.
+And that's it! You're done configuring this project. To run the card, follow the same process as any other Experience Extension using the SDK. Use npm start and use live reload to test your card, or deploy it to your Experience Setup page. You can also delete worker.js file from your local repository if you already pasted its contents inside your worker.js file in Cloudflare.
 
 <img width="286" height="276" alt="image" src="https://github.com/user-attachments/assets/b99d439d-a947-4487-abe6-a54bc0b18034" />
 
