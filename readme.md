@@ -5,9 +5,65 @@ First, go to Cloudflare:
 https://www.cloudflare.com/
 
 Click on 'Start for free' button
+
 <img width="568" height="429" alt="image" src="https://github.com/user-attachments/assets/f8aa3123-bff3-4a8e-81bc-6dca2672968b" />
 
+Sign up to Cloudflare (or log in if you already have an account)
 
+Inside Cloudflare's Dashboard, click on 'Workers & Pages' located at the left navigation menu, and then click on 'Create application'
+
+<img width="922" height="320" alt="image" src="https://github.com/user-attachments/assets/ad3e7fe8-cb1b-4a72-906e-46226cbd14a0" />
+
+Click on 'Start with Hello World!'
+
+<img width="705" height="356" alt="image" src="https://github.com/user-attachments/assets/d32d3be1-7d70-4da7-a4f2-c7df582c980e" />
+
+Optionally, adjust the name of your worker, and click on Deploy
+
+<img width="712" height="389" alt="image" src="https://github.com/user-attachments/assets/f06c2bd0-4532-4420-997f-fc4539306b66" />
+
+Now we are ready to provide our Ethos Application API Key. To do this, inside your newly created worker, click on 'Settings'
+
+<img width="940" height="266" alt="image" src="https://github.com/user-attachments/assets/3fd5db50-d01f-45e4-8475-8c36c20ab311" />
+
+Click on + Add in the 'Variables and Secrets' section
+
+<img width="947" height="428" alt="image" src="https://github.com/user-attachments/assets/bc6cecf9-16e5-467f-8707-cb0b3f80a2d1" />
+
+Make sure to select 'Secret' from the dropdown. This is VERY important. Name your secret, in this example the name is ethos_app_secret. If you change this name, make sure to also change it inside your worker.js file (we will get to that step later). Provide your API Key from your Ethos application in the Value field. Click on Deploy.
+
+<img width="745" height="501" alt="image" src="https://github.com/user-attachments/assets/f34fa21f-5ae6-4e38-9cf7-3eff5c54ca58" />
+
+At this point, we have successfully provided our Ethos application's API Key to Cloudflare. Make sure that the application that holds this API Key has a username and password inside the 'Credentials' tab that has the necessary permissions assigned to interact with the APIs.
+
+Now we are ready to modify our worker.js file. To do this, inside of your worker, click on 'Edit code'
+
+<img width="747" height="184" alt="image" src="https://github.com/user-attachments/assets/612d4701-e15b-4e4a-b4f3-2325acc6e0b5" />
+
+Inside this online editor, replace the code with the code provided in this repository's worker.js file. If you used a name different than ethos_app_secret when registering your API Key, make sure to update ethos_app_secret with the name that you used. Click on deploy to save the changes
+
+<img width="950" height="458" alt="image" src="https://github.com/user-attachments/assets/a8c9f36a-99d9-4af5-95aa-ccff4416cb68" />
+
+Now you are done configuring your serverless API. Before leaving this view, copy your worker.js URL:
+
+<img width="872" height="375" alt="image" src="https://github.com/user-attachments/assets/5db1c34b-dc63-4342-ab05-9e0abdda1eec" />
+
+This is because you will need to update the contents of line 60 inside the HTTPCard.jsx file inside this repository using that URL. Just as an example, instead of having this:
+
+`https://your.worker.url.here/ethos/${resource}`,
+
+We would have this:
+
+`https://wispy-flower-798c.samuel-yarhi.workers.dev/ethos/${resource}`,
+
+And that's it! You're done configuring this project. To run the card, follow the same process as any other Experience Extension using the SDK. Use npm start and use live reload to test your card, or deploy it to your Experience Setup page.
+
+<img width="286" height="276" alt="image" src="https://github.com/user-attachments/assets/b99d439d-a947-4487-abe6-a54bc0b18034" />
+
+
+NOTE: This example uses a GET Method, however, you can modify the code inside worker.js (your back-end) and HTTPCard.jsx (your front-end) if you would like to use POST or PUT Methods. If you do so, please share your repository with me ! samuel.yarhi@ellucian.com
+
+Find the Read me contents of the SDK Extensions below:
 
 # Create Experience Extension
 This module bootstraps your Ellucian Experience Extension development by creating an extension project. This module is primarily used to create your initial project. From this, you would add cards and make modifications. This project should be placed under your source control.
