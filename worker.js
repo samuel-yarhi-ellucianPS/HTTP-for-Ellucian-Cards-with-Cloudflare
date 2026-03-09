@@ -84,7 +84,7 @@ export default {
       `https://integrate.elluciancloud.com/api/${modelPath}`
     );
 
-    // 🔒 Hardcode limit=1 for simple flow
+    // Hardcode limit=1 for simple flow
     ethosUrl.searchParams.set("limit", "1");
 
     // Forward all other query params (except limit)
