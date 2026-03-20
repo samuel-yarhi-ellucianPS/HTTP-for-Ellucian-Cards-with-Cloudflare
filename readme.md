@@ -40,7 +40,7 @@ Now we are ready to modify our worker.js file. To do this, inside of your worker
 
 <img width="747" height="184" alt="image" src="https://github.com/user-attachments/assets/612d4701-e15b-4e4a-b4f3-2325acc6e0b5" />
 
-Inside this online editor, replace the code with the code provided in this repository's worker.js file. If you used a name different than ethos_app_secret when registering your API Key, make sure to update ethos_app_secret with the name that you used. Click on deploy to save the changes
+Inside this online editor, replace the code with the code provided in this repository's worker.js file. If you used a name different than ethos_app_secret when registering your API Key, make sure to update ethos_app_secret with the name that you used. Also, if you are using any other domain instead of .com, make sure to update lines 3, 40 and 58 of the worker.js file. In line 3 you'll see the test experience URL by default, so in case you want to use production just remove -test. Click on deploy to save the changes
 
 <img width="950" height="458" alt="image" src="https://github.com/user-attachments/assets/a8c9f36a-99d9-4af5-95aa-ccff4416cb68" />
 
